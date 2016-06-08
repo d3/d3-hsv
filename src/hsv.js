@@ -1,5 +1,15 @@
-import define, {extend} from "./define";
-import {Color, rgbConvert, Rgb, darker, brighter} from "./color";
+// import define, {extend} from "./define";
+// import {Color, rgbConvert, Rgb, darker, brighter} from "./color";
+
+// TODO
+
+function define() {}
+function extend() {}
+function Color() {}
+function rgbConvert() {}
+function Rgb() {}
+function darker() {}
+function brighter() {}
 
 function hsvConvert(o) {
   if (o instanceof Hsv) return new Hsv(o.h, o.s, o.v, o.opacity);
