@@ -55,15 +55,16 @@ hsvPrototype.rgb = function() {
   var h = isNaN(this.h) ? 0 : this.h % 360 + (this.h < 0) * 360,
       s = isNaN(this.h) || isNaN(this.s) ? 0 : this.s,
       v = this.v,
+      a = this.opacity,
       c = v * s,
-      x = c * (1 - Math.abs((h/60)%2 - 1)),
+      x = c * (1 - Math.abs((h / 60) % 2 - 1)),
       m = v - c;
-  if (h < 60) return hsv2rgb(c, x, 0, m, this.opacity);
-  else if (h < 120) return hsv2rgb(x, c, 0, m, this.opacity);
-  else if (h < 180) return hsv2rgb(0, c, x, m, this.opacity);
-  else if (h < 240) return hsv2rgb(0, x, c, m, this.opacity);
-  else if (h < 300) return hsv2rgb(x, 0, c, m, this.opacity);
-  return new hsv2rgb(c, 0, x, m, this.opacity);
+  return h < 60 ? hsv2rgb(c, x, 0, m, a)
+      : h < 120 ? hsv2rgb(x, c, 0, m, a)
+      : h < 180 ? hsv2rgb(0, c, x, m, a)
+      : h < 240 ? hsv2rgb(0, x, c, m, a)
+      : h < 300 ? hsv2rgb(x, 0, c, m, a)
+      : hsv2rgb(c, 0, x, m, a);
 };
 
 hsvPrototype.displayable = function() {
