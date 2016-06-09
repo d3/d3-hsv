@@ -1,6 +1,6 @@
 {
   "name": "d3-hsv",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "The HSV (Hue, Saturation, Value) color space.",
   "keywords": [
     "d3",
