@@ -165,7 +165,7 @@ tape("hsv(color) returns undefined hue and saturation for black", function(test)
   test.end();
 });
 
-tape("hsv(color) converts from another colorspace via d3_color.rgb()", function(test) {
+tape("hsv(color) converts from another colorspace via d3.rgb()", function(test) {
   function TestColor() {}
   TestColor.prototype = Object.create(d3_color.color.prototype);
   TestColor.prototype.rgb = function() { return d3_color.rgb(12, 34, 56, 0.4); };
