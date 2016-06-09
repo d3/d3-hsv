@@ -8,6 +8,7 @@ If you use NPM, `npm install d3-hsv`. Otherwise, download the [latest release](h
 
 ```html
 <script src="https://d3js.org/d3-color.v0.5.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v0.9.min.js"></script>
 <script src="https://d3js.org/d3-hsv.v0.0.min.js"></script>
 <script>
 
@@ -27,3 +28,15 @@ var yellow = d3.hsv("yellow"); // {h: 60, s: 1, v: 1, opacity: 1}
 Constructs a new [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) color. The channel values are exposed as `h`, `s` and `v` properties on the returned instance.
 
 If *h*, *s* and *v* are specified, these represent the channel values of the returned color; an *opacity* may also be specified. If a CSS Color Module Level 3 *specifier* string is specified, it is parsed and then converted to the HSV color space. See [d3.color](https://github.com/d3/d3-color#color) for examples. If a [*color*](https://github.com/d3/d3-color#color) instance is specified, it is converted to the RGB color space using [*color*.rgb](https://github.com/d3/d3-color#color_rgb) and then converted to HSV.
+
+<a name="interpolateHsv" href="#interpolateHsv">#</a> d3.<b>interpolateHsv</b>(<i>a</i>, <i>b</i>)
+
+<img src="https://raw.githubusercontent.com/d3/d3-hsv/master/img/hsv.png" width="100%" height="40" alt="hsv">
+
+Returns an HSV color space interpolator between the two colors *a* and *b*. The colors *a* and *b* need not be in HSV; they will be converted to HSV using [d3.hsv](#hsv). If either color’s hue or saturation is NaN, the opposing color’s channel value is used. The shortest path between hues is used. The return value of the interpolator is an RGB string.
+
+<a name="interpolateHsvLong" href="#interpolateHsvLong">#</a> d3.<b>interpolateHsvLong</b>(<i>a</i>, <i>b</i>)
+
+<img src="https://raw.githubusercontent.com/d3/d3-hsv/master/img/hsvLong.png" width="100%" height="40" alt="hsvLong">
+
+Like [interpolateHsv](#interpolateHsv), but does not use the shortest path between hues.
