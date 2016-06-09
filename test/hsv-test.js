@@ -111,7 +111,7 @@ tape("hsv(h, s, v) preserves explicit hue, even for grays", function(test) {
   test.end();
 });
 
-tape("hsv(h, s, v) preserves explicit saturation, even for white or black", function(test) {
+tape("hsv(h, s, v) preserves explicit saturation, even for black", function(test) {
   test.hsvEqual(d3.hsv(0, 0, 0), 0, 0, 0, 1);
   test.hsvEqual(d3.hsv(0, 0.18, 0), 0, 0.18, 0, 1);
   test.hsvEqual(d3.hsv(0, 0.42, 1), 0, 0.42, 1, 1);
@@ -149,19 +149,19 @@ tape("hsv(rgb) converts from RGB", function(test) {
   test.end();
 });
 
-tape("hsv(color) returns undefined hue and zero saturation for grays (but not white and black)", function(test) {
+tape("hsv(color) returns undefined hue and zero saturation for grays and white", function(test) {
   test.hsvEqual(d3.hsv("gray"), NaN, 0, 0.5019608, 1);
   test.hsvEqual(d3.hsv("#ccc"), NaN, 0, 0.8, 1);
   test.hsvEqual(d3.hsv(d3_color.rgb("gray")), NaN, 0, 0.5019608, 1);
+  test.hsvEqual(d3.hsv("white"), NaN, 0, 1, 1);
+  test.hsvEqual(d3.hsv("#fff"), NaN, 0, 1, 1);
+  test.hsvEqual(d3.hsv(d3_color.rgb("#fff")), NaN, 0, 1, 1);
   test.end();
 });
 
-tape("hsv(color) returns undefined hue and saturation for black and white", function(test) {
+tape("hsv(color) returns undefined hue and saturation for black", function(test) {
   test.hsvEqual(d3.hsv("black"), NaN, NaN, 0, 1);
   test.hsvEqual(d3.hsv("#000"), NaN, NaN, 0, 1);
-  test.hsvEqual(d3.hsv("white"), NaN, NaN, 1, 1);
-  test.hsvEqual(d3.hsv("#fff"), NaN, NaN, 1, 1);
-  test.hsvEqual(d3.hsv(d3_color.rgb("#fff")), NaN, NaN, 1, 1);
   test.end();
 });
 

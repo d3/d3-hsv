@@ -13,15 +13,13 @@ function hsvConvert(o) {
       max = Math.max(r, g, b),
       d = max - min,
       h = NaN,
-      s = max ? d/max : 0,
+      s = d / max,
       v = max;
   if (d) {
     if (r === max) h = (g - b) / d + (g < b) * 6;
     else if (g === max) h = (b - r) / d + 2;
     else h = (r - g) / d + 4;
     h *= 60;
-  } else {
-    s = v > 0 && v < 1 ? 0 : h;
   }
   return new Hsv(h, s, v, o.opacity);
 }
