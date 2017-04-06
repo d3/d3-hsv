@@ -2,6 +2,17 @@
 
 This module implements the [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (Hue, Saturation, Value) color space.
 
+For example, to recreate R’s terrain.colors:
+
+```js
+var i0 = d3.interpolateHsvLong(d3.hsv(120, 1, 0.65), d3.hsv(60, 1, 0.90)),
+    i1 = d3.interpolateHsvLong(d3.hsv(60, 1, 0.90), d3.hsv(0, 0, 0.95));
+
+function interpolateTerrain(t) {
+  return t < 0.5 ? i0(t * 2) : i1((t - 0.5) * 2);
+}
+```
+
 ## Installing
 
 If you use NPM, `npm install d3-hsv`. Otherwise, download the [latest release](https://github.com/d3/d3-hsv/releases/latest). You can also load directly from [d3js.org](https://d3js.org) as a [standalone library](https://d3js.org/d3-hsv.v0.1.min.js). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
