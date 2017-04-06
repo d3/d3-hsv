@@ -4,11 +4,11 @@ This module implements the [HSV](https://en.wikipedia.org/wiki/HSL_and_HSV) (Hue
 
 ## Installing
 
-If you use NPM, `npm install d3-hsv`. Otherwise, download the [latest release](https://github.com/d3/d3-hsv/releases/latest). You can also load directly from [d3js.org](https://d3js.org) as a [standalone library](https://d3js.org/d3-hsv.v0.0.min.js). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
+If you use NPM, `npm install d3-hsv`. Otherwise, download the [latest release](https://github.com/d3/d3-hsv/releases/latest). You can also load directly from [d3js.org](https://d3js.org) as a [standalone library](https://d3js.org/d3-hsv.v0.1.min.js). AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3` global is exported:
 
 ```html
-<script src="https://d3js.org/d3-color.v0.5.min.js"></script>
-<script src="https://d3js.org/d3-hsv.v0.0.min.js"></script>
+<script src="https://d3js.org/d3-color.v1.min.js"></script>
+<script src="https://d3js.org/d3-hsv.v0.1.min.js"></script>
 <script>
 
 var yellow = d3.hsv("yellow"); // {h: 60, s: 1, v: 1, opacity: 1}
