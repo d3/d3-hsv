@@ -41,7 +41,7 @@ If *h*, *s* and *v* are specified, these represent the channel values of the ret
 
 <a href="#interpolateHsv">#</a> d3.<b>interpolateHsv</b>(<i>a</i>, <i>b</i>) [<>](https://github.com/d3/d3-hsv/blob/master/src/interpolateHsv.js "Source")<br>
 
-Returns an HSV color space interpolator between the two colors a and b. The colors a and b need not be in HSV; they will be converted to HSV using [d3.hsv](#hsv). If either color’s hue or chroma is NaN, the opposing color’s channel value is used. The shortest path between hues is used. The return value of the interpolator is an RGB string.
+Returns an HSV color space interpolator between the two colors *a* and *b*. The colors *a* and *b* need not be in HSV; they will be converted to HSV using [d3.hsv](#hsv). If either color’s hue or chroma is NaN, the opposing color’s channel value is used. The shortest path between hues is used. The return value of the interpolator is an RGB string.
 
 <a href="#interpolateHsvLong">#</a> d3.<b>interpolateHsvLong</b>(<i>a</i>, <i>b</i>) [<>](https://github.com/d3/d3-hsv/blob/master/src/interpolateHsv.js "Source")<br>
 
