@@ -30,6 +30,7 @@
     "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/d3-hsv.js -c -m -o build/d3-hsv.min.js",
     "postpublish": "git push && git push --tags && cd ../d3.github.com && git pull && cp ../d3-hsv/build/d3-hsv.js d3-hsv.v0.1.js && cp ../d3-hsv/build/d3-hsv.min.js d3-hsv.v0.1.min.js && git add d3-hsv.v0.1.js d3-hsv.v0.1.min.js && git commit -m \"d3-hsv ${npm_package_version}\" && git push && cd - && zip -j build/d3-hsv.zip -- LICENSE README.md build/d3-hsv.js build/d3-hsv.min.js"
   },
+  "sideEffects": false,
   "devDependencies": {
     "eslint": "3",
     "package-preamble": "0.0",
